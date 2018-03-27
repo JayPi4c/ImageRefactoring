@@ -11,18 +11,19 @@ public class Main {
 	public static void main(String args[]) throws IOException {
 		System.out.println("Starting up");
 		int threshold = 15;
-		if (args[0] != null)
-			threshold = Integer.parseInt(args[0]);
-
 		boolean all = true;
 		int toEdit = 0;
+		if (args.length > 0) {
+			if (args[0] != null)
+				threshold = Integer.parseInt(args[0]);
 
-		if (args[1] != null) {
-			if (args[1].equalsIgnoreCase("all")) {
-				all = true;
-			} else {
-				all = false;
-				toEdit = Integer.parseInt(args[1]);
+			if (args[1] != null) {
+				if (args[1].equalsIgnoreCase("all")) {
+					all = true;
+				} else {
+					all = false;
+					toEdit = Integer.parseInt(args[1]);
+				}
 			}
 		}
 
